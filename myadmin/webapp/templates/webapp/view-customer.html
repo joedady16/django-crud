@@ -1,0 +1,53 @@
+{% extends 'webapp/base.html' %}
+
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div class="card">
+
+    <div class="card-body">
+
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
+
+        <strong>
+            {{customer.first_name}}
+            {{customer.last_name}}
+        </strong>
+    
+        <hr>
+
+        <p><strong> ID: </strong>  {{customer.id}} </p>
+        <p><strong> Email: </strong>  {{customer.email}} </p>
+        <p><strong> Phone: </strong>  {{customer.phone}} </p>
+        <p><strong> Address: </strong>  {{customer.address}} </p>
+        <p><strong> City: </strong>  {{customer.city}} </p>
+        <p><strong> State: </strong>  {{customer.state}} </p>
+        <p><strong> Zip Code: </strong>  {{customer.zip}} </p>
+
+        <p><strong> Created Date: </strong>  {{customer.creation_date}} </p>
+
+        
+
+    </div>
+
+</div>
+
+<br>
+
+<a href="{% url 'dashboard' %}" class="btn btn-secondary">Back &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+
+&nbsp;
+<a href="{% url 'update-record' customer.id %}" class="btn btn-info">Update &nbsp; <i class="fa fa-plus" aria-hidden="true"></i></a>
+
+&nbsp;
+<a href="{% url 'delete-customer' customer.id %}" class="btn btn-danger">Delete &nbsp; <i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+
+&nbsp;
+
+
+
+
+{% endblock %}

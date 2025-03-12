@@ -1,0 +1,67 @@
+{% extends "webapp/base.html" %}
+
+
+{% block content %}
+
+    <h5> Welcome, {{user}}! 👋 </h5>
+
+    <hr>
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'create-customer' %}">Create Customer &nbsp; <i class="fa fa-plus" aria-hidden="true"></i></a>
+
+    <hr>
+
+    <table class="table table-hover table-bordered">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th scope="col"> ID </th>
+                <th scope="col"> FULL NAME </th>
+                <th scope="col"> ADDRESS </th>
+                <th scope="col"> CITY </th>
+                <th scope="col"> STATE </th>
+                <th scope="col"> ZIP </th>
+                <th scope="col"> PHONE </th>
+                <th scope="col"> EMAIL </th>
+                <th scope="col"> DATE ADDED </th>
+
+                <th scope="col"> VIEW </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% if customers %}
+
+                {% for customer in customers %}
+
+                <tr>
+                    <td>{{customer.id}}</td>
+                    <td>{{customer.first_name}} {{customer.last_name}}</td>
+                    <td>{{customer.address}}</td>
+                    <td>{{customer.city}}</td>
+                    <td>{{customer.state}}</td>
+                    <td>{{customer.zip}}</td>
+                    <td>{{customer.phone}}</td>
+                    <td>{{customer.email}}</td>
+                    <td>{{customer.creation_date}}</td>
+
+                    <td> <a class="btn btn-success btn-sm" href="{% url 'customer' customer.id %}"> <i class="fa fa-eye" aria-hidden="true"></i> </a> </td>
+                </tr>
+
+                {% endfor %}
+
+            {% endif %}
+
+        </tbody>
+    </table>
+
+    {% comment %} {% for record in records %}
+
+        {{record.id}}
+        {{record.first_name}}
+        {{record.last_name}}
+    
+        {% endfor %} {% endcomment %}
+
+{% endblock %}
