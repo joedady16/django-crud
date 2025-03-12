@@ -1,5 +1,60 @@
+# Virtual environments
 venv/
 env/
 .venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django-related files
+db.sqlite3  # Ignore SQLite database
 *.sqlite3
 *.db
+
+# Ignore local settings (if used)
+settings_local.py
+config.json
+secrets.json
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore static and media files
+staticfiles/
+media/
+
+# Ignore migrations cache (but not actual migrations)
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# Ignore compiled files
+*.mo
+*.pot
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Ignore Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
+
+# Ignore Docker-related files (if using Docker)
+.dockerignore
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore PyCharm settings
+.idea/
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
+*.whl
